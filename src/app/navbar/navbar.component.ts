@@ -9,17 +9,16 @@ import { AuthService } from '../auth.service';
 export class NavbarComponent implements OnInit {
 
   constructor(public auth: AuthService) { }
-nameUser:string
+  nameUser: string
+
   ngOnInit(): void {
-    if(this.auth.currentUser)
-    {
-    this.nameUser=this.auth.currentUser.userName
-    console.log("test")
+    if (this.auth.currentUser) {
+      this.nameUser = this.auth.currentUser.userName
+      console.log("test")
     }
   }
 
-
-  logout(){
+  logout() {
     this.auth.logout()
   }
 

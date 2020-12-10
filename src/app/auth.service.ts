@@ -8,25 +8,21 @@ export class AuthService {
 
   currentUser: IUser
   loginUser(userName: string, password: string) {
-    console.log(userName, password)
-
     USERS.forEach(user => {
       if (user.passeword == password && user.userName == userName) {
         this.currentUser = user;
-        console.log("yes")
       }
-
-
     })
     return this.currentUser
   }
+
   isAuthenticated() {
     return !!this.currentUser
   }
+
   logout() {
     this.currentUser = undefined;
   }
-
 }
 
 const USERS: IUser[] = [

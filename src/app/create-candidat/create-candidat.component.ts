@@ -8,28 +8,27 @@ import { CandidatService } from '../candidat.service';
   templateUrl: './create-candidat.component.html',
   styleUrls: ['./create-candidat.component.css']
 })
-export class CreateCandidatComponent{
-firstName
-lastName
-leadership
-travailequipe
-initiative
-capacite
-autonomie
-rigueur
-creativite
-  constructor(private candidatservice:CandidatService,public auth:AuthService, private router:Router) { }
+export class CreateCandidatComponent {
+  firstName
+  lastName
+  leadership
+  travailequipe
+  initiative
+  capacite
+  autonomie
+  rigueur
+  creativite
+  constructor(private candidatservice: CandidatService, public auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  saveCandidat(formValues){
- this.candidatservice.saveCandidat(formValues);
- this.router.navigate(['candidat'])
-
+  saveCandidat(formValues) {
+    this.candidatservice.saveCandidat(formValues);
+    this.router.navigate(['candidat'])
   }
 
-  cancel(){
+  cancel() {
     this.router.navigate(['candidat'])
   }
 
