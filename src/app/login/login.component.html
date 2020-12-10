@@ -1,0 +1,26 @@
+<div class="pageLogin">
+<div class="blocLogin col-md-5">
+<h1 class="text-center">Login</h1>
+
+<div class=" formLogin">
+  <form autocomplete="off" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+    <div class="form-group" novalidate >
+      <label for="userName">User Name:</label>
+      <input id="userName"  (ngModel)="userName" name="userName" required type="text" class="form-control" placeholder="User Name..." />
+      <em  *ngIf="loginForm.controls.userName?.invalid && (loginForm.controls.userName?.touched || mouseoverLogin)">* champs obligatoires</em>
+
+    </div>
+    <div class="form-group" >
+      <label for="password">Password:</label>
+      <input id="password"  (ngModel)="password" name="password" type="password" required class="form-control"placeholder="Password..." />
+      <em  *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password?.touched || mouseoverLogin)">* champs obligatoires</em>
+
+    </div>
+      <span (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false" class="mr-3">
+    <button type="submit" class="btn btn-secondary btn-sm" [disabled]="loginForm.invalid">Login</button>
+  </span>  
+  </form>
+  <br>
+  <div *ngIf="loginInvalid" class="alert alert-danger">Invalid Login info</div>
+</div>
+</div></div>

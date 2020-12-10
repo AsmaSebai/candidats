@@ -1,0 +1,162 @@
+<div class="container mt-3">
+  <h3>Ajouter un nouveau candidat</h3>
+  <form #newCandidatForm="ngForm" (ngSubmit)="saveCandidat(newCandidatForm.value)" autocomplete="off" novalidate>
+    <div class="">
+      <div class="form-group row">
+        <div class="col-3"><label>First Name:</label></div>
+        <div class="col-3">
+          <input id="firstName" name="firstName" [(ngModel)]="firstName" type="text" required class="form-control"
+            placeholder="First Name..." />
+          <em *ngIf="newCandidatForm.controls.firstName?.invalid && (newCandidatForm.controls.firstName?.touched)">*
+            champs obligatoires</em>
+        </div>
+        <div class="col-3"><label>Last Name:</label></div>
+        <div class="col-3">
+          <input id="lastName" name="lastName" [(ngModel)]="lastName" type="text" required class="form-control"
+            placeholder="Last Name..." />
+          <em *ngIf="newCandidatForm.controls.lastName?.invalid && (newCandidatForm.controls.lastName?.touched)">*
+            champs obligatoires</em>
+        </div>
+      </div>
+      <h4>Evaluation:</h4>
+      <div class="form-group row">
+        <div class="col-3"><label>Leadership:</label></div>
+        <div class="col-3">
+          <!-- <input  id="leadership" [(ngModel)]="leadership" name="leadership" id="leadership" type="text"  class="form-control" placeholder="Leadership..." /> -->
+          <select id="leadership" max='10' [(ngModel)]="leadership" name="leadership" id="leadership" class="form-control"
+            placeholder="Leadership...">
+            <option value="" disabled selected>Sélectionnez une note</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+        </div>
+        <div class="col-3"><label>Travail d'équipe:</label></div>
+        <div class="col-3">
+          <select id="travailequipe" [(ngModel)]="travailequipe" name="travailequipe" id="travailequipe" type="text"
+            class="form-control" placeholder="Travail...">
+            <option value="" disabled selected>Sélectionnez une note</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-3"><label>Initiative:</label></div>
+        <div class="col-3">
+          <select id="initiative" [(ngModel)]="initiative" name="initiative" type="text" class="form-control"
+            placeholder="Initiative...">
+            <option value="" disabled selected>Sélectionnez une note</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+        </div>
+        <div class="col-3"><label>Capacité:</label></div>
+        <div class="col-3"><select id="capacite" [(ngModel)]="capacite" name="capacite" type="text" class="form-control"
+            placeholder="Capacité...">
+            <option value="" disabled selected>Sélectionnez une note</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-3"><label>Autonomie:</label></div>
+        <div class="col-3">
+          <select id="autonomie" [(ngModel)]="autonomie" name="autonomie" type="text" class="form-control"
+            placeholder="Autonomie...">
+            <option value="" disabled selected>Sélectionnez une note</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+        </div>
+
+        <div class="col-3"><label>Rigueur:</label></div>
+        <div class="col-3">
+          <select id="rigueur" [(ngModel)]="rigueur" name="rigueur" type="text" class="form-control"
+            placeholder="Rigueur...">
+            <option value="" disabled selected>Sélectionnez une note</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-3"><label>Créativité:</label></div>
+        <div class="col-3">
+          <select id="creativite" [(ngModel)]="creativite" name="creativite" type="text" class="form-control"
+            placeholder="Creativité...">
+            <option value="" disabled selected>Sélectionnez une note</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" [disabled]="newCandidatForm.invalid" class="btn btn-secondary btn-sm mr-1">Ajouter</button>
+      <button type="button" class="btn btn-outline-secondary btn-sm" (click)="cancel()">Annuler</button>
+    </div>
+  </form>
+</div>

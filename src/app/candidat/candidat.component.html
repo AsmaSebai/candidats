@@ -1,0 +1,115 @@
+<div class="container-fluid pt-3 px-5">
+<button type="button" (click)=newCandidat() class="btn btn-secondary btn-sm"  *ngIf="auth.currentUser?.type=='admin'" >Ajouter un nouveau Candidat</button>
+<div id="accordion" class="pt-3">
+    <div *ngFor="let candidat of candidats ;let i=index">
+    <div class="card" *ngIf="((candidat.idUser==auth.currentUser?.id && auth.currentUser?.type=='admin')||(auth.currentUser?.type=='super'))" >
+      <div class="card-header" id="headingOne" class="d-flex justify-content-between">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" [attr.data-target]="'#collapseOne_' + i" aria-expanded="true" [attr.aria-controls]="'collapseOne_' + i">
+           {{candidat.firstName}}  {{candidat.lastName}}
+          </button>
+        </h5>
+        <a type="button" (click)="charts(candidat.id)" class="btnVisualisation" data-toggle="modal" [attr.data-target]="'#exampleModal' + i" >
+       Visualiser les notes
+        </a>
+      </div>
+  
+      <div  [ngClass]="{'show': i === 0 }" [attr.id]="'collapseOne_' + i"class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+                 
+        
+            <div class="container">
+           
+                <div class="form-group row">
+                  <div class="col-3"><label>First Name:</label></div>
+                  <div class="col-3"><input disabled [(ngModel)]="candidat.firstName"type="text" class="form-control" placeholder="First Name..." /></div>
+   
+                  <div class="col-3"><label>Last Name:</label></div>
+                  <div class="col-3"><input  disabled [(ngModel)]="candidat.lastName"  type="text" class="form-control" placeholder="Last Name..." /></div>
+                </div>
+                <h4 class="h4Forms">Evaluation:</h4>
+                <div class="form-group row" >
+            
+                  <div class="col-3"><label>Leadership:</label></div>
+                  <div class="col-3"><input  disabled [(ngModel)]="candidat.leadership"  type="text"  class="form-control" placeholder="Leadership..." /></div>
+
+                  <div class="col-3"><label>Travail d'équipe:</label></div>
+                  <div class="col-3"><input  disabled [(ngModel)]="candidat.travailequipe"  type="text"  class="form-control" placeholder="Travail..." /></div>
+                </div>
+
+
+                <div class="form-group row" >
+            
+                  <div class="col-3"><label>Initiative:</label></div>
+                  <div class="col-3"><input  disabled [(ngModel)]="candidat.initiative"  type="text"  class="form-control" placeholder="Initiative..." /></div>
+
+                  <div class="col-3"><label>Capacite:</label></div>
+                  <div class="col-3"><input  disabled [(ngModel)]="candidat.capacite"  type="text"  class="form-control" placeholder="Capacité..." /></div>
+                </div>
+
+
+
+                <div class="form-group row" >
+            
+                  <div class="col-3"><label>Autonomie:</label></div>
+                  <div class="col-3"><input  disabled [(ngModel)]="candidat.autonomie"  type="text"  class="form-control" placeholder="Autonomie..." /></div>
+
+                  <div class="col-3"><label>Rigueur:</label></div>
+                  <div class="col-3"><input disabled [(ngModel)]="candidat.rigueur"  type="text"  class="form-control" placeholder="Rigueur..." /></div>
+                </div>
+
+
+
+                <div class="form-group row" >
+            
+                  <div class="col-3"><label >Créativité:</label></div>
+                  <div class="col-3"><input  disabled [(ngModel)]="candidat.creativite"  type="text"  class="form-control" placeholder="Créativité..." /></div>
+
+                  
+                </div>
+          
+           
+               
+         
+            </div>
+        
+        
+        </div>
+      </div>
+    </div>
+
+      <!-- Modal -->
+  <div class="modal fade" [attr.id]="'exampleModal' + i" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">   {{candidat.firstName}}  {{candidat.lastName}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <canvas baseChart 
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [colors]="barChartColors"
+          [chartType]="barChartType"
+         >
+        </canvas>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+  </div>
+</div>
+  <!-- Button trigger modal -->
+
+

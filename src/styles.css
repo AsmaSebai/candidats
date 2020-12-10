@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+html, body{
+    height: 100%;
+}
+.navbar {
+    background-color: #f7815c;
+    padding: 4px 5px!important;
+}
+
+.navbar a, .navbar {
+       color: #fff;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: inherit!important;
+    padding-left: 0px;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.navbar-nav li{
+  
+    padding-left: 20px
+ 
+}
+/****************card**************/
+div#headingOne {
+    background-color: #f1ecec;
+    padding: 0px 11px;
+}
+
+.card .btn-link, .card a {
+    font-weight: 400;
+    color: #4b5dc1!important;
+    text-decoration: none!important;
+}
+/********************form***************/
+form label, label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: #495dcc;
+    font-size: 14px;
+}
+
+input.form-control {
+    padding: 0px 13px;
+    font-size: 14px;
+}
+h4.h4Forms, form h4 {
+    font-size: 16px;
+    color: #3e4348;
+    padding-bottom: 12px;
+}
+
+h3{
+    font-size: 24px!important;
+    color: #3e4348;
+    padding-bottom: 12px;
+}
+em {
+    color: red;
+    font-size: 14px;
+}

@@ -1,0 +1,29 @@
+.formLogin{
+    margin: 0px auto;
+}
+
+.blocLogin {
+    margin: 0px auto;
+    background-color: #fff;
+    padding: 16px 19px;
+    border-radius: 5px;
+    }
+
+.blocLogin h1 {
+    color: #495dcc;
+ 
+}
+
+.blocLogin label {
+    font-weight: 500;
+}
+.pageLogin{
+margin: 0px;
+height: 100%;
+padding-top: 10%;
+width: 100%;
+background-image: url(../../assets/Images/loginbg.jpg);
+
+background-size: cover;
+
+}
