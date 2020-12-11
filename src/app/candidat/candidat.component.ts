@@ -4,6 +4,7 @@ import { AuthService } from '../auth.service';
 import { CandidatService } from '../candidat.service';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label, Color } from 'ng2-charts';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-candidat',
@@ -11,6 +12,7 @@ import { Label, Color } from 'ng2-charts';
   styleUrls: ['./candidat.component.css']
 })
 export class CandidatComponent implements OnInit {
+  faEye = faEye;
   title = 'bar-chart';
   barChartOptions: ChartOptions = {
   responsive: true,
@@ -55,6 +57,7 @@ export class CandidatComponent implements OnInit {
 
   }
 
+ 
   newCandidat() {
     this.router.navigate(['nouveauCandidat'])
   }

@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CandidatService } from './candidat.service';
 import { CreateCandidatComponent } from './create-candidat/create-candidat.component';
 import { ChartsModule } from 'ng2-charts';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ChartsModule } from 'ng2-charts';
     ReactiveFormsModule,
     AppRoutingModule,
     ChartsModule,
+    FontAwesomeModule,
   
 
 

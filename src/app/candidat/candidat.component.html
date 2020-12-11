@@ -14,7 +14,7 @@
           </h5>
           <a type="button" (click)="chartsCandidat(candidat.id)" class="btnVisualisation" data-toggle="modal"
             [attr.data-target]="'#exampleModal' + i">
-            Visualiser les notes
+            <fa-icon [icon]="faEye"></fa-icon> Visualiser
           </a>
         </div>
         <div [ngClass]="{'show': i === 0 || i === 2 }" [attr.id]="'collapseOne_' + i" class="collapse "
