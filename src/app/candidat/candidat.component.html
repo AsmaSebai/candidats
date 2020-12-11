@@ -2,7 +2,7 @@
   <button type="button" (click)=newCandidat() class="btn btn-secondary btn-sm"
     *ngIf="auth.currentUser?.type=='admin'">Ajouter un nouveau Candidat</button>
   <div id="accordion" class="pt-3">
-    <div *ngFor="let candidat of candidats ;let i=index">
+    <div *ngFor="let candidat of candidats ;let i=index ; first as isFirst" >
       <div class="card"
         *ngIf="((candidat.idUser==auth.currentUser?.id && auth.currentUser?.type=='admin')||(auth.currentUser?.type=='super'))">
         <div class="card-header" id="headingOne" class="d-flex justify-content-between">
@@ -17,7 +17,7 @@
             Visualiser les notes
           </a>
         </div>
-        <div [ngClass]="{'show': i === 0 }" [attr.id]="'collapseOne_' + i" class="collapse "
+        <div [ngClass]="{'show': i === 0 || i === 2 }" [attr.id]="'collapseOne_' + i" class="collapse "
           aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
             <div class="container">
